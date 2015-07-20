@@ -5,7 +5,7 @@
 *.gcda
 *.gcno
 *.gcov
-RunInteger
-TestInteger
+RunGraph
+TestGraph
 latex
 Doxyfile
