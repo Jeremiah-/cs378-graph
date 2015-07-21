@@ -521,7 +521,7 @@ TYPED_TEST(TestGraph, adjacent_vertices3) {
     adjacency_iterator                           e = p.second;
 
     for (int i = 1; i < 100; ++i) {
-        ASSERT_EQ(vertex(i, g), *b);
+        ASSERT_EQ(vertex(i, g), *b);  
         ++b;
     }
     ASSERT_EQ(e, b);
