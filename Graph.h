@@ -59,34 +59,37 @@ class Graph {
             if (source == dest) {
                 return std::make_pair(ed, false);
             }
-            std::cout << "checkpoint 1" << std::endl;
+            // std::cout << "checkpoint 1" << std::endl;
 
             // increase the size of the graph if source or dest is out of range
-            if (source > (num_vertices(graph) - 1) || dest > (num_vertices(graph) - 1)) {
+            // std::cout << std::max(source, dest) << std::endl;
+            if (std::max(source, dest) >= (graph.g.size())) {
+                // std::cout << "checkpoint 1.5" << std::endl;
                 for (vertices_size_type i = num_vertices(graph); i <= std::max(source, dest); ++i) {
                     add_vertex(graph);
                 }
             }
-            std::cout << "checkpoint 2" << std::endl;
+            // std::cout << graph.g.size() << std::endl;
+            // std::cout << "checkpoint 2" << std::endl;
             
             // if empty, add this edge
             if (graph.edge_list.empty()) {
-                std::cout << "checkpoint 3" << std::endl;
+                // std::cout << "checkpoint 3" << std::endl;
                 graph.edge_list.insert(ed);
                 graph.g[source].insert(dest);
-                std::cout << "checkpoint 4" << std::endl;
+                // std::cout << "checkpoint 4" << std::endl;
                 return std::make_pair(ed, true);
 
             } else {
                 // if the element is not found, we can insert it
                 if (graph.g[source].find(dest) == graph.g[source].end()) {
-                    std::cout << "checkpoint 5" << std::endl;
+                    // std::cout << "checkpoint 5" << std::endl;
                     graph.edge_list.insert(ed);
                     graph.g[source].insert(dest);
                     return std::make_pair(ed, true);
 
                 } else { // else it is already in there
-                    std::cout << "checkpoint 6" << std::endl;
+                    // std::cout << "checkpoint 6" << std::endl;
                     return std::make_pair(ed, false);
                 }
             }
@@ -104,8 +107,9 @@ class Graph {
         friend vertex_descriptor add_vertex (Graph& graph) {
             // <your code>
             // std::cout << "in add_vertex" << std::endl;
-            vertex_descriptor v = num_vertices(graph); // fix
-            graph.g.push_back(std::set<vertex_descriptor>());
+            vertex_descriptor v = num_vertices(graph);
+            std::set<vertex_descriptor> x;
+            graph.g.push_back(x);
             // std::cout << "add_vertex: just pushed" << std::endl;
 
             assert(graph.g.size() == (v + 1));
@@ -269,7 +273,10 @@ class Graph {
         /**
          * <your documentation>
          */
-        Graph () {
+        Graph () :
+        edge_list(),
+        g() 
+        {
             // <your code>
             assert(valid());}
 
