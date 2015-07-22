@@ -152,7 +152,7 @@ TYPED_TEST(TestGraph, add_edge1) {
     vertex_descriptor vdB = add_vertex(g);
 
     edge_descriptor edAB = add_edge(vdA, vdB, g).first;
-    std::cout << edAB << std::endl;
+    // std::cout << edAB << std::endl;
     // edge_descriptor zero = 0;
     // ASSERT_EQ(zero, edAB);
 
