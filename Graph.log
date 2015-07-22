@@ -1,0 +1,89 @@
+commit 1119896c2931a9b7caeeacebbb3686229e0d65f7
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 21:50:38 2015 -0500
+
+    yay
+
+commit 12ae3aaf63bd9e38b0d59001799f50cbe0499149
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 21:46:52 2015 -0500
+
+    closes #22 closes #6
+
+commit ae8d176c14b11ff1d089b5babfc0d5b78d8ab1dc
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 21:13:19 2015 -0500
+
+    closes #21
+
+commit a2047f8dd5247ef3daf478dd2e29d39472845d36
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 21:12:37 2015 -0500
+
+    closes #19
+
+commit a2a9f65de3b835ece0e43d22de1bd9fbe69ef947
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 20:22:14 2015 -0500
+
+    closes #18
+
+commit 805fd14d426387644db39858516430d81f91650c
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 19:49:56 2015 -0500
+
+    closes #17. vertex() was not implemented and some of the functions depended on it
+
+commit 317d52ec03db21b5a93eb97d54ce9c9c4cb35961
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 19:34:30 2015 -0500
+
+    closes #15 closes #16. Implemented a few functions
+
+commit e80a3ff39f38ed11582e38cd27368768313f26e2
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 18:08:54 2015 -0500
+
+    closes #14 closes #5. The two functions just return the source and target inside the edge
+
+commit 1d89233e364f02fb9ba7197eb01ad8825b0952a9
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 16:10:18 2015 -0500
+
+    closes #13. Was assuming the wrong things about how adjacency list works
+
+commit 0b937014210bef4200706486e977163fd418ae19
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 21 16:09:12 2015 -0500
+
+    closes #12. Was comparing ints to types of array list,ex. edge_descriptor
+
+commit 2c3234278c22df6ab1f62c19b8128b10806f29c6
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Mon Jul 20 14:33:20 2015 -0500
+
+    changed to ignore TestGraph
+
+commit 51bef6fb3ab9fec861e5e5a973c2d158e9d191d9
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Mon Jul 20 14:30:52 2015 -0500
+
+    adding my .gitignore file
+
+commit d0f79f3745a4f65b7d8335adcfdf6cf095dfc33e
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Sun Jul 19 23:35:06 2015 -0500
+
+    Delete README.md
+
+commit f27286e00bf6254a0f2be81c59c8febea7c5e13f
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Sun Jul 19 23:24:09 2015 -0500
+
+    closes #2. Time to get the ball rollin.
+
+commit 7152ec51da4922ae15d84c74c7d7151c5aa94391
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Sun Jul 19 22:34:33 2015 -0500
+
+    Initial commit
