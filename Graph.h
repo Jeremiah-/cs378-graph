@@ -105,7 +105,7 @@ class Graph {
          * Adds a vertex to the graph and returns the vertex descriptor for the new vertex.
          */
         friend vertex_descriptor add_vertex (Graph& graph) {
-            // <your code>
+            // <your code>   
             // std::cout << "in add_vertex" << std::endl;
             vertex_descriptor v = num_vertices(graph);
             std::set<vertex_descriptor> x;
