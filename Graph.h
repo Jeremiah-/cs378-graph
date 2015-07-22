@@ -29,9 +29,9 @@ class Graph {
         typedef int vertex_descriptor;  // fix!
         typedef std::pair<vertex_descriptor, vertex_descriptor> edge_descriptor;    // fix!
 
-        typedef int* vertex_iterator;    // fix!
+        typedef vertex_descriptor* vertex_iterator;    // fix!
         typedef edge_descriptor* edge_iterator;      // fix!
-        typedef int* adjacency_iterator; // fix!
+        typedef vertex_descriptor* adjacency_iterator; // fix!
 
         typedef std::size_t vertices_size_type;
         typedef std::size_t edges_size_type;
@@ -114,7 +114,7 @@ class Graph {
          */
         friend std::pair<adjacency_iterator, adjacency_iterator> adjacent_vertices (vertex_descriptor v, const Graph& graph) {
             // <your code>
-            static int a [] = {0, 0};     // dummy data
+            vertex_descriptor a [] = {0, 0};     // dummy data
             adjacency_iterator b = a;
             adjacency_iterator e = a + 2;
             return std::make_pair(b, e);}
@@ -203,11 +203,11 @@ class Graph {
         // ------
 
         /**
-         * returns the nth vertex desciptor. Basically just returns the number give
+         * returns the nth vertex desciptor. Basically just returns the number given
          */
         friend vertex_descriptor vertex (vertices_size_type n, const Graph& graph) {
             // <your code>
-            vertex_descriptor vd = 0; // fix
+            vertex_descriptor vd = n; // fix
             return vd;}
 
         // --------

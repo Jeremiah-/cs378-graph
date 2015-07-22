@@ -1045,9 +1045,13 @@ TYPED_TEST(TestGraph, vertex1) {
     graph_type g;
     
     edge_descriptor e = add_edge(0, 99, g).first;
-    vertex_descriptor x = 4;
+    vertex_descriptor x = 0;
 
-    ASSERT_EQ(x, vertex(4, g));
+    ASSERT_EQ(x, vertex(0, g));
+
+    x = 99;
+    vertex_descriptor y = vertex(0, g);
+    ASSERT_EQ(x, *(adjacent_vertices(0, g).first));
 }
 
 TYPED_TEST(TestGraph, vertex2) {
