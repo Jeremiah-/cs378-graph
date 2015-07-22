@@ -59,6 +59,7 @@ class Graph {
             if (source == dest) {
                 return std::make_pair(ed, false);
             }
+            std::cout << "checkpoint 1" << std::endl;
 
             // increase the size of the graph if source or dest is out of range
             if (source > (num_vertices(graph) - 1) || dest > (num_vertices(graph) - 1)) {
@@ -66,21 +67,26 @@ class Graph {
                     add_vertex(graph);
                 }
             }
+            std::cout << "checkpoint 2" << std::endl;
             
             // if empty, add this edge
             if (graph.edge_list.empty()) {
+                std::cout << "checkpoint 3" << std::endl;
                 graph.edge_list.insert(ed);
                 graph.g[source].insert(dest);
+                std::cout << "checkpoint 4" << std::endl;
                 return std::make_pair(ed, true);
 
             } else {
                 // if the element is not found, we can insert it
                 if (graph.g[source].find(dest) == graph.g[source].end()) {
+                    std::cout << "checkpoint 5" << std::endl;
                     graph.edge_list.insert(ed);
                     graph.g[source].insert(dest);
                     return std::make_pair(ed, true);
 
                 } else { // else it is already in there
+                    std::cout << "checkpoint 6" << std::endl;
                     return std::make_pair(ed, false);
                 }
             }
@@ -97,8 +103,10 @@ class Graph {
          */
         friend vertex_descriptor add_vertex (Graph& graph) {
             // <your code>
+            // std::cout << "in add_vertex" << std::endl;
             vertex_descriptor v = num_vertices(graph); // fix
             graph.g.push_back(std::set<vertex_descriptor>());
+            // std::cout << "add_vertex: just pushed" << std::endl;
 
             assert(graph.g.size() == (v + 1));
             assert(graph.g[v].empty());
@@ -117,7 +125,8 @@ class Graph {
             vertex_descriptor a [] = {0, 0};     // dummy data
             adjacency_iterator b = a;
             adjacency_iterator e = a + 2;
-            return std::make_pair(b, e);}
+            return std::make_pair(b, e);
+        }
 
         // ----
         // edge
@@ -129,9 +138,14 @@ class Graph {
          */
         friend std::pair<edge_descriptor, bool> edge (vertex_descriptor source, vertex_descriptor dest, const Graph& graph) {
             // <your code>
-            edge_descriptor ed = std::make_pair(0, 1);
-            bool            b  = true;
-            return std::make_pair(ed, b);}
+            edge_descriptor ed = std::make_pair(source, dest);
+
+            if (graph.edge_list.find(ed) != graph.edge_list.end()) {
+                return std::make_pair(ed, true);
+            } else {
+                return std::make_pair(ed, false);
+            }
+        }
 
         // -----
         // edges
@@ -157,7 +171,7 @@ class Graph {
          */
         friend edges_size_type num_edges (const Graph& graph) {
             // <your code>
-            edges_size_type s = 1; // fix
+            edges_size_type s = graph.edge_list.size(); // fix
             return s;}
 
         // ------------
@@ -169,6 +183,7 @@ class Graph {
          */
         friend vertices_size_type num_vertices (const Graph& graph) {
             // <your code>
+            // std::cout << "in num_vertices" << std::endl;
             vertices_size_type s = graph.g.size(); 
             return s;}
 
@@ -182,7 +197,7 @@ class Graph {
          */
         friend vertex_descriptor source (edge_descriptor e, const Graph& graph) {
             // <your code>
-            vertex_descriptor v = 0; // fix
+            vertex_descriptor v = e.first; 
             return v;}
 
         // ------
@@ -195,7 +210,7 @@ class Graph {
          */
         friend vertex_descriptor target (edge_descriptor e, const Graph& graph) {
             // <your code>
-            vertex_descriptor v = 0; // fix
+            vertex_descriptor v = e.second;
             return v;}
 
         // ------
@@ -220,7 +235,7 @@ class Graph {
          */
         friend std::pair<vertex_iterator, vertex_iterator> vertices (const Graph& graph) {
             // <your code>
-            static int a [] = {0, 0};     // dummy data
+            int a [] = {0, 0};     // dummy data
             vertex_iterator b = a;
             vertex_iterator e = a + 2;
             return std::make_pair(b, e);}
